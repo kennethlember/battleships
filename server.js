@@ -15,10 +15,10 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
     socket.on('chatMessage', msg => {
         console.log(socket.id + ': ' + msg)
-        io.emit('chatMessage', {'userId': socket.id, 'message': msg})
+        io.emit('chatMessage', { 'userId': socket.id, 'message': msg })
     })
 
-    io.emit('initGameBoard', {'humanGameBoard': seaBattle.gameBoard.human})
+    io.emit('initGameBoard', { 'humanGameBoard': seaBattle.gameBoard.human })
     // console.log('user connected ' + socket.id)
     // socket.on('disconnect', () => {
     //     console.log('user ' + socket.id + ' disconnected');
