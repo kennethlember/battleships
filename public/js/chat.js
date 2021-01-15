@@ -47,6 +47,20 @@ socket.on('initGameBoard', res => {
             machineBoardDiv.append(cellDiv)
         }
     }
+
+    const machineCells = document.querySelectorAll('#machine-board .cell')
+
+    console.log(machineCells)
+
+    function clickBoard() {
+        console.log('Hea töö sa vajutasid boardile')
+    }
+    machineCells.forEach(
+        function (machineCell) {
+            machineCell.addEventListener('click', clickBoard)
+        }
+    )
+    const cellCoords = click.target
 })
 
 messageInput.focus()
