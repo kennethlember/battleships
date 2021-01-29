@@ -17,6 +17,10 @@ socket.on('chatMessage', res => {
     messageContainer.scrollTop = messageContainer.scrollHeight
 })
 
+socket.on('newUserConnected', res => {
+
+})
+
 socket.on('initGameBoard', res => {
     const humanBoardDiv = document.querySelector('#human-board')
 
@@ -52,15 +56,19 @@ socket.on('initGameBoard', res => {
 
     console.log(machineCells)
 
-    function clickBoard() {
+    function clickBoard(machineCell) {
         console.log('Hea töö sa vajutasid boardile')
+        console.log(machineCell.dataset.col)
     }
     machineCells.forEach(
         function (machineCell) {
-            machineCell.addEventListener('click', clickBoard)
+            machineCell.addEventListener('click', () => {
+                console.log('Hea töö sa vajutasid boardile')
+                console.log(machineCell.dataset)
+                socket.emit('attack', machineCell.dataset)
+            })
         }
     )
-    const cellCoords = click.target
 })
 
 messageInput.focus()

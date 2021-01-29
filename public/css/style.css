@@ -6,6 +6,8 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: 3px solid black;
     border-radius: 10px;
+    width: 75%;
+    display: flex;
 }
 
 #message-box {
@@ -13,6 +15,10 @@
     height: 25px;
     margin-right: 20px;
     margin-left: 20px;
+}
+
+#chat-container {
+    display: flex;
 }
 
 #container {
@@ -35,6 +41,10 @@
     border: 1px solid black;
     text-align: center;
     font-size: 1em;
+}
+
+.cell:hover {
+    background-color: lightgray;
 }
 
 .ship {
